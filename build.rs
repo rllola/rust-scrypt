@@ -6,8 +6,8 @@ fn main() {
     let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
 
     cc::Build::new()
-        .flag("-std=c99")
-        .define("WINDOWS_OS", None)
+        .std("c17") // https://docs.rs/cc/1.2.16/cc/struct.Build.html#method.std
+        .define("WINDOWS_OS", None) // To avoid `ext/scrypt/crypto_scrypt.c(33): fatal error C1083: Cannot open include file: 'sys/mman.h': No such file or directory`
         .include("ext/scrypt")
         .file("ext/scrypt/crypto_scrypt.c")
         .file("ext/scrypt/crypto_scrypt_smix.c")

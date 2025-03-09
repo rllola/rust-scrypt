@@ -1,8 +1,6 @@
 //! # C bindings to `Scrypt` key derivation function
 //! specified in (RPC 7914)[https://tools.ietf.org/html/rfc7914])
 
-#![cfg_attr(feature = "dev", feature(plugin))]
-#![cfg_attr(feature = "dev", plugin(clippy))]
 #![allow(non_upper_case_globals)]
 
 use std::mem::size_of;
