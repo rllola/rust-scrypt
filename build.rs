@@ -6,7 +6,7 @@ fn main() {
     let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
 
     cc::Build::new()
-        .flag("-std=c99")
+        .flag("-std=c2x")
         .define("WINDOWS_OS", None)
         .include("ext/scrypt")
         .file("ext/scrypt/crypto_scrypt.c")
