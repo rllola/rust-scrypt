@@ -7,7 +7,7 @@ fn main() {
 
     cc::Build::new()
         .flag("-std=c2x")
-        .define("WINDOWS_OS", None)
+        // .define("WINDOWS_OS", None)
         .include("ext/scrypt")
         .file("ext/scrypt/crypto_scrypt.c")
         .file("ext/scrypt/crypto_scrypt_smix.c")
